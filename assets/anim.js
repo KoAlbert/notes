@@ -314,6 +314,8 @@
   }
 
   function init() {
+    /* 行內公式：<span class="tex">TeX</span> */
+    document.querySelectorAll('span.tex').forEach(function (el) { tex(el, el.textContent, false); });
     document.querySelectorAll('.w-stepper').forEach(initStepper);
     document.querySelectorAll('.w-power').forEach(initPower);
     document.querySelectorAll('.w-merge').forEach(initMerge);
