@@ -21,19 +21,26 @@
 <p>所有次方規則，都來自一個最簡單的定義：2^3 就是 2 自己乘 3 次。</p>
 <pre><code class="language-latex">2^3 = 2 \times 2 \times 2 = 8</code></pre>
 <p>只要記住「指數 = 乘了幾次」，下面四條規則都能自己推出來。</p>
+<div class="widget w-power" data-title="動手試試：拖動滑桿，看 2 連乘幾次" data-base="2" data-max="10" data-start="3"></div>
 <h3 id="規則-1同底數相乘指數相加">規則 1：同底數相乘，指數相加</h3>
 <pre><code class="language-latex">a^m \times a^n = a^{m+n}</code></pre>
 <p>例如 2^3 × 2^4：前面有 3 個 2，後面有 4 個 2，全部攤開共 7 個 2，所以等於 2^7。乘的次數直接合併。</p>
+<div class="widget w-merge" data-title="按「合併」：把兩堆 2 放在一起數" data-base="2" data-groups="3,4"></div>
+<div class="widget w-stepper" data-title="規則 1 逐步推導"><script type="application/json">[{"tex": "2^3 \\times 2^4", "note": "先把兩個次方都寫回乘法"}, {"tex": "= (2\\cdot 2\\cdot 2)\\times(2\\cdot 2\\cdot 2\\cdot 2)", "note": "左邊 3 個 2，右邊 4 個 2"}, {"tex": "= 2\\cdot 2\\cdot 2\\cdot 2\\cdot 2\\cdot 2\\cdot 2", "note": "括號拿掉，全部連乘"}, {"tex": "= 2^{7} = 2^{\\textcolor{#e8590c}{3+4}}", "note": "一共 7 個 2，也就是 3 + 4 個"}, {"tex": "a^m \\times a^n = a^{\\textcolor{#e8590c}{m+n}}", "note": "換成任意的 m、n 也一樣成立"}]</script></div>
 <h3 id="規則-2同底數相除指數相減">規則 2：同底數相除，指數相減</h3>
 <pre><code class="language-latex">\frac{a^m}{a^n} = a^{m-n}</code></pre>
 <p>例如 2^5 ÷ 2^3：分子 5 個 2、分母 3 個 2，上下約掉 3 個，剩下 2^2。所以 5 − 3 = 2。</p>
+<div class="widget w-stepper" data-title="規則 2 逐步推導"><script type="application/json">[{"tex": "\\dfrac{2^5}{2^3}", "note": "一樣先寫回乘法"}, {"tex": "= \\dfrac{2\\cdot2\\cdot2\\cdot2\\cdot2}{2\\cdot2\\cdot2}", "note": "分子 5 個 2，分母 3 個 2"}, {"tex": "= \\dfrac{\\cancel{2}\\cdot\\cancel{2}\\cdot\\cancel{2}\\cdot2\\cdot2}{\\cancel{2}\\cdot\\cancel{2}\\cdot\\cancel{2}}", "note": "上下各約掉 3 個"}, {"tex": "= 2\\cdot 2 = 2^{2} = 2^{\\textcolor{#e8590c}{5-3}}", "note": "剩下 5 − 3 = 2 個"}, {"tex": "\\dfrac{a^m}{a^n} = a^{\\textcolor{#e8590c}{m-n}}", "note": "換成任意的 m、n 也一樣成立"}]</script></div>
 <h3 id="規則-3為什麼-a0-1">規則 3：為什麼 a^0 = 1？</h3>
 <p>任何數除以自己都等於 1，所以 a^3 ÷ a^3 = 1。但用規則 2 算，它又等於 a^(3−3) = a^0。兩種算法結果必須一樣，因此：</p>
 <pre><code class="language-latex">a^0 = 1 \quad (a \neq 0)</code></pre>
+<div class="widget w-stepper" data-title="規則 3：同一個算式，兩種算法"><script type="application/json">[{"tex": "\\dfrac{a^3}{a^3} = 1", "note": "算法一：任何不是 0 的數除以自己，都是 1"}, {"tex": "\\dfrac{a^3}{a^3} = a^{3-3} = a^{0}", "note": "算法二：用規則 2，指數相減"}, {"tex": "\\Rightarrow\\; \\textcolor{#e8590c}{a^{0} = 1}", "note": "兩種算法的答案一定相同，所以 a⁰ 只能等於 1"}]</script></div>
 <h3 id="規則-4次方的次方指數相乘">規則 4：次方的次方，指數相乘</h3>
 <pre><code class="language-latex">(a^m)^n = a^{mn}</code></pre>
 <p>例如 (2^3)^4 就是 4 個 2^3 相乘，指數是 3 + 3 + 3 + 3 = 12，所以等於 2^12。重複 n 次相加，就是乘以 n。</p>
 <blockquote><p>這條規則第 6 題會用到：(a^x)^50 = a^(50x)</p></blockquote>
+<div class="widget w-merge" data-title="(2³)⁴ 就是 4 組 2³：按「合併」數一數" data-base="2" data-groups="3,3,3,3"></div>
+<div class="widget w-stepper" data-title="規則 4 逐步推導"><script type="application/json">[{"tex": "\\left(2^3\\right)^4", "note": "「4 次方」就是乘 4 次"}, {"tex": "= 2^3 \\cdot 2^3 \\cdot 2^3 \\cdot 2^3", "note": "4 個 2³ 相乘"}, {"tex": "= 2^{3+3+3+3}", "note": "用規則 1：指數相加"}, {"tex": "= 2^{12} = 2^{\\textcolor{#e8590c}{3\\times 4}}", "note": "3 加了 4 次，就是 3 × 4"}, {"tex": "\\left(a^m\\right)^n = a^{\\textcolor{#e8590c}{mn}}", "note": "換成任意的 m、n 也一樣成立"}]</script></div>
 <h2 id="第二站分數次方為什麼是根號">第二站：分數次方為什麼是根號？</h2>
 <p>a^(1/2) 不是「乘半次」——它是為了讓指數規則繼續成立，才被定義成 √a。</p>
 <p>想想看：如果規則 4（次方的次方）要對分數也成立，那麼 a^(1/2) 平方之後應該是：</p>
@@ -45,6 +52,7 @@
 <p>口訣：<strong>分母管開根，分子管次方</strong>。例如：</p>
 <pre><code class="language-latex">8^{2/3} = \left(\sqrt[3]{8}\right)^2 = 2^2 = 4</code></pre>
 <p>先把 8 開立方得到 2，再平方得到 4。這個例子馬上就會用到。</p>
+<div class="widget w-stepper" data-title="分數次方逐步推導"><script type="application/json">[{"tex": "\\left(a^{1/2}\\right)^2", "note": "想知道 a^(1/2) 是什麼，先把它平方看看"}, {"tex": "= a^{\\frac12 \\times 2}", "note": "用規則 4：指數相乘"}, {"tex": "= a^{1} = a", "note": "平方之後剛好變回 a"}, {"tex": "\\Rightarrow\\; \\textcolor{#e8590c}{a^{1/2} = \\sqrt{a}}", "note": "「平方之後等於 a 的正數」就是 √a"}, {"tex": "8^{2/3} = \\left(8^{1/3}\\right)^{2}", "note": "例子：分母 3 管開根，分子 2 管次方"}, {"tex": "= \\left(\\sqrt[3]{8}\\right)^{2} = 2^{2} = 4", "note": "先開立方得 2，再平方得 4"}]</script></div>
 <h2 id="第三站從第-5-題得到-ax-4">第三站：從第 5 題得到 a^x = 4</h2>
 <p>第 5 題的關鍵結果是 a^x = 4，而第 6 題的 a^(50x) 可以化成 2^100。</p>
 <h3 id="步驟-1求-ax">步驟 1：求 a^x</h3>
@@ -53,15 +61,18 @@
 <p>兩邊同取 2/3 次方，因為 (3/2) × (2/3) = 1，左邊剛好只剩 a^x：</p>
 <pre><code class="language-latex">a^x = 8^{2/3} = 4</code></pre>
 <blockquote><p>重點：a^x = 4 是第 6 題最重要的起點。我們不需要知道 a 和 x 各自是多少，只要整包 a^x 就夠了。</p></blockquote>
+<div class="widget w-stepper" data-title="求 a^x 逐步推導"><script type="application/json">[{"tex": "a^{3x/2} = 8", "note": "第 5 題給的條件"}, {"tex": "\\left(a^{x}\\right)^{3/2} = 8", "note": "把 3x/2 看成 x × 3/2（規則 4 反過來用）"}, {"tex": "\\left(\\left(a^{x}\\right)^{3/2}\\right)^{\\textcolor{#e8590c}{2/3}} = 8^{\\textcolor{#e8590c}{2/3}}", "note": "兩邊同時取 2/3 次方"}, {"tex": "a^{x} = 8^{2/3}", "note": "3/2 × 2/3 = 1，左邊只剩 a^x"}, {"tex": "\\textcolor{#e8590c}{a^{x} = 4}", "note": "上一站算過 8^(2/3) = 4"}]</script></div>
 <h3 id="步驟-2把-a50x-化簡">步驟 2：把 a^(50x) 化簡</h3>
 <p>再用一次規則 4，把 a^(50x) 拆成 (a^x)^50，然後代入 4：</p>
 <pre><code class="language-latex">a^{50x} = \left(a^x\right)^{50} = 4^{50} = \left(2^2\right)^{50} = 2^{100}</code></pre>
 <p>現在問題變成：<strong>2^100 寫成科學記號，前面的數字 b 是多少？</strong> 2^100 大到無法直接算，這時就需要 log 出場。</p>
+<div class="widget w-stepper" data-title="化簡 a^(50x) 逐步推導"><script type="application/json">[{"tex": "a^{50x} = \\left(a^{x}\\right)^{50}", "note": "規則 4：50x 看成 x × 50"}, {"tex": "= \\textcolor{#e8590c}{4}^{50}", "note": "代入 a^x = 4"}, {"tex": "= \\left(2^{2}\\right)^{50}", "note": "4 就是 2²"}, {"tex": "= 2^{100}", "note": "規則 4：2 × 50 = 100"}]</script></div>
 <h2 id="第四站log-就是反過來問指數">第四站：Log 就是「反過來問指數」</h2>
 <p>log N 問的是：「10 的幾次方會等於 N？」它不是新的運算，而是次方的反方向。</p>
 <h3 id="log-的定義">Log 的定義</h3>
 <p>我們知道 10^3 = 1000。反過來問「10 的幾次方等於 1000？」答案是 3，寫成 log 1000 = 3。底數是 10 的對數叫「常用對數」，底數 10 通常省略不寫。</p>
 <pre><code class="language-latex">\log b = c \iff 10^c = b</code></pre>
+<div class="widget w-power" data-title="反過來問：10 要乘幾次？" data-base="10" data-max="6" data-start="3" data-log></div>
 <h3 id="為什麼-logab-log-a-log-b">為什麼 log(ab) = log a + log b？</h3>
 <p>這條公式其實就是規則 1（同底數相乘，指數相加）換個說法。設：</p>
 <pre><code class="language-latex">\log a = x \Rightarrow a = 10^x, \qquad \log b = y \Rightarrow b = 10^y</code></pre>
@@ -70,10 +81,12 @@
 <p>所以「10 的幾次方等於 ab？」答案是 x + y，也就是：</p>
 <pre><code class="language-latex">\log(ab) = x + y = \log a + \log b</code></pre>
 <blockquote><p>log 會把「乘法」變成「加法」——因為次方相乘時，指數本來就是相加。</p></blockquote>
+<div class="widget w-stepper" data-title="log(ab) = log a + log b 逐步推導"><script type="application/json">[{"tex": "\\log a = x,\\qquad \\log b = y", "note": "先替兩個 log 取名字"}, {"tex": "a = 10^{x},\\qquad b = 10^{y}", "note": "照 log 的定義改寫"}, {"tex": "ab = 10^{x}\\cdot 10^{y} = 10^{\\textcolor{#e8590c}{x+y}}", "note": "規則 1：指數相加"}, {"tex": "\\log(ab) = x + y = \\log a + \\log b", "note": "10 的 x + y 次方是 ab，所以 log(ab) = x + y"}]</script></div>
 <h3 id="為什麼-logan-n-log-a">為什麼 log(a^n) = n log a？</h3>
 <p>a^n 就是 n 個 a 相乘，用上面的乘法公式拆開，就是 n 個 log a 相加：</p>
 <pre><code class="language-latex">\log(a^n) = \underbrace{\log a + \log a + \cdots + \log a}_{n \text{ 個}} = n \log a</code></pre>
 <p>口訣：<strong>指數可以搬到 log 前面</strong>。第 6 題會直接用到這條。</p>
+<div class="widget w-stepper" data-title="log(aⁿ) = n log a 逐步推導"><script type="application/json">[{"tex": "\\log\\left(a^{n}\\right) = \\log(\\underbrace{a\\cdot a\\cdots a}_{n\\text{ 個}})", "note": "aⁿ 就是 n 個 a 相乘"}, {"tex": "= \\underbrace{\\log a + \\log a + \\cdots + \\log a}_{n\\text{ 個}}", "note": "用上一條：乘法變加法"}, {"tex": "= \\textcolor{#e8590c}{n}\\log a", "note": "n 個相同的數相加，就是乘以 n"}]</script></div>
 <h2 id="第五站科學記號和-log-怎麼接起來">第五站：科學記號和 log 怎麼接起來？</h2>
 <p>一個數取 log 之後，<strong>整數部分決定 n（有幾位數的量級），小數部分決定 b（開頭的數字）</strong>。</p>
 <p>任何正數都能寫成科學記號：</p>
@@ -85,6 +98,8 @@
 <p>log b 一定是個「0 點多」的小數。所以只要算出 log N，把它拆成「整數 + 小數」：</p>
 <ul><li><p>整數部分 → 就是 n</p></li><li><p>小數部分 → 就是 log b，再用它反推 b</p></li></ul>
 <p>例如 log N = 30.103，就拆成 30 + 0.103：n = 30，log b = 0.103。</p>
+<div class="widget w-stepper" data-title="科學記號與 log 逐步推導"><script type="application/json">[{"tex": "N = b\\times 10^{n}\\qquad (1 \\le b < 10)", "note": "任何正數都能寫成科學記號"}, {"tex": "\\log N = \\log b + \\log\\left(10^{n}\\right)", "note": "兩邊取 log，乘法變加法"}, {"tex": "\\log N = \\textcolor{#1c7ed6}{n} + \\textcolor{#e8590c}{\\log b}", "note": "log(10ⁿ) = n"}, {"tex": "0 \\le \\textcolor{#e8590c}{\\log b} < 1", "note": "因為 1 ≤ b < 10，所以 log b 一定是 0 點多"}]</script></div>
+<div class="widget w-logruler" data-title="拖動滑桿或按下方按鈕：log 的整數與小數各管什麼" data-max="31"></div>
 <h2 id="終點完整解出第-6-題">終點：完整解出第 6 題</h2>
 <p>答案是 <strong>k = 1</strong>，因為 2^100 ≈ 1.27 × 10^30。</p>
 <p><strong>步驟 1：取 log。</strong> 我們已經知道 a^(50x) = 2^100，用「指數搬到前面」：</p>
@@ -97,6 +112,7 @@
 <p><strong>步驟 4：對照題目。</strong> 題目說 k ≤ b &lt; k + 1，而 1 ≤ 1.27 &lt; 2，所以：</p>
 <pre><code class="language-latex">2^{100} \approx 1.27 \times 10^{30}, \qquad k = 1</code></pre>
 <blockquote><p>小發現：n = 30 也告訴我們，2^100 是一個 31 位數。</p></blockquote>
+<div class="widget w-stepper" data-title="第 6 題完整推導"><script type="application/json">[{"tex": "\\log\\left(2^{100}\\right) = 100\\log 2", "note": "指數搬到 log 前面"}, {"tex": "\\approx 100\\times 0.30103 = 30.103", "note": "log 2 ≈ 0.30103"}, {"tex": "30.103 = \\textcolor{#1c7ed6}{30} + \\textcolor{#e8590c}{0.103}", "note": "拆成整數 + 小數"}, {"tex": "2^{100} = 10^{30.103} = 10^{\\textcolor{#e8590c}{0.103}}\\times 10^{\\textcolor{#1c7ed6}{30}}", "note": "整數部分給 10 的次方，小數部分給開頭"}, {"tex": "\\log 1 = 0 \\;\\le\\; \\textcolor{#e8590c}{0.103} \\;<\\; 0.301 \\approx \\log 2", "note": "跟 log 1、log 2 比大小"}, {"tex": "1 \\le 10^{\\textcolor{#e8590c}{0.103}} < 2", "note": "所以開頭的數字 b 介於 1 和 2 之間"}, {"tex": "2^{100}\\approx 1.27\\times 10^{30}\\quad\\Rightarrow\\quad \\textcolor{#e8590c}{k = 1}", "note": "答案 k = 1"}]</script></div>
 <h2 id="公式總整理">公式總整理</h2>
 <p>整條路線只有一個核心：<strong>log 的規則，就是指數規則倒過來寫</strong>。</p>
 <table><thead><tr><th>用途</th><th>公式</th><th>一句話理解</th></tr></thead><tbody><tr><td>同底數相乘</td><td>a^m × a^n = a^(m+n)</td><td>乘的次數合併</td></tr><tr><td>同底數相除</td><td>a^m ÷ a^n = a^(m−n)</td><td>上下約掉相同的因數</td></tr><tr><td>次方的次方</td><td>(a^m)^n = a^(mn)</td><td>重複 n 次，所以乘 n</td></tr><tr><td>零次方</td><td>a^0 = 1（a ≠ 0）</td><td>自己除以自己</td></tr><tr><td>分數次方</td><td>a^(1/n) = ⁿ√a</td><td>讓指數規則保持一致</td></tr><tr><td>一般分數次方</td><td>a^(m/n) = (ⁿ√a)^m</td><td>分母開根，分子次方</td></tr><tr><td>Log 定義</td><td>log b = c ⇔ 10^c = b</td><td>反過來問指數</td></tr><tr><td>Log 乘法</td><td>log(ab) = log a + log b</td><td>乘法變加法</td></tr><tr><td>Log 次方</td><td>log(a^n) = n log a</td><td>指數搬到前面</td></tr><tr><td>常用對數</td><td>log(10^n) = n</td><td>log 和 10^x 互為反運算</td></tr><tr><td>科學記號</td><td>N = b × 10^n，1 ≤ b &lt; 10</td><td>n 決定量級，b 決定開頭</td></tr></tbody></table>
@@ -115,5 +131,6 @@ document.querySelectorAll('pre > code.language-latex').forEach(function (code) {
   } catch (e) {}
 });
 </script>
+<script src="../assets/anim.js"></script>
 </body>
 </html>
